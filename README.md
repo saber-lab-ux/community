@@ -30,7 +30,7 @@ Community 商品管理系统
 下面展示已登录用户访问商品接口时的数据流：
 
 ```mermaid
-flowchart TD
+flowchart LR
     A["浏览器：HTML / CSS / JavaScript"]
     B["Spring Security：检查登录状态"]
     C["ProductController：接收商品请求"]
