@@ -30,23 +30,32 @@ Community 商品管理系统
 下面展示已登录用户访问商品接口时的数据流：
 
 ```mermaid
-flowchart LR
-    A["浏览器：HTML / CSS / JavaScript"]
-    B["Spring Security：检查登录状态"]
-    C["ProductController：接收商品请求"]
-    D["ProductRepository：访问数据"]
-    E["Hibernate / JDBC"]
-    F[("MySQL：保存商品")]
+flowchart TB
+    subgraph TOP["请求处理"]
+        direction LR
+        A["浏览器<br/>HTML / CSS / JavaScript"]
+        B["Spring Security<br/>检查登录状态"]
+        C["ProductController<br/>接收商品请求"]
 
-    A -->|HTTP 请求| B
-    B -->|验证通过| C
-    C --> D
-    D --> E
-    E --> F
-    F --> E
-    E --> D
-    D --> C
-    C -->|JSON 响应| A
+        A -->|HTTP 请求| B
+        B -->|验证通过| C
+        C -.->|JSON 响应| A
+    end
+
+    subgraph BOTTOM["数据访问"]
+        direction RL
+        D["ProductRepository<br/>访问数据"]
+        E["Hibernate / JDBC"]
+        F[("MySQL<br/>保存商品")]
+
+        D --> E
+        E --> F
+        F -.-> E
+        E -.-> D
+    end
+
+    TOP -->|调用数据访问层| BOTTOM
+    BOTTOM -.->|返回查询结果| TOP
 ```
 
 登录请求由 Spring Security 单独处理，不经过 ProductController。
