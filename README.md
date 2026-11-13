@@ -25,6 +25,32 @@ Community 商品管理系统
 
 项目包含 Redis 依赖及连接配置；当前商品业务尚未使用 Redis 缓存。
 
+## 系统架构
+
+下面展示已登录用户访问商品接口时的数据流：
+
+```mermaid
+flowchart TD
+    A["浏览器：HTML / CSS / JavaScript"]
+    B["Spring Security：检查登录状态"]
+    C["ProductController：接收商品请求"]
+    D["ProductRepository：访问数据"]
+    E["Hibernate / JDBC"]
+    F[("MySQL：保存商品")]
+
+    A -->|HTTP 请求| B
+    B -->|验证通过| C
+    C --> D
+    D --> E
+    E --> F
+    F --> E
+    E --> D
+    D --> C
+    C -->|JSON 响应| A
+```
+
+登录请求由 Spring Security 单独处理，不经过 ProductController。
+
 ## 本地启动
 
 ### 1. 准备环境
