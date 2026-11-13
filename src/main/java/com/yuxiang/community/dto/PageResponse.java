@@ -1,4 +1,4 @@
-package com.yuxiang.commuity.dto;
+package com.yuxiang.community.dto;
 
 import org.springframework.data.domain.Page;
 

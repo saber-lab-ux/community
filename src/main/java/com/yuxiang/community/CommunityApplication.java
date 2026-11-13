@@ -1,13 +1,13 @@
-package com.yuxiang.commuity;
+package com.yuxiang.community;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CommuityApplication {
+public class CommunityApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CommuityApplication.class, args);
+        SpringApplication.run(CommunityApplication.class, args);
     }
 
 }

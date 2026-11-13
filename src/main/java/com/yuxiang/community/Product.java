@@ -1,4 +1,4 @@
-package com.yuxiang.commuity;
+package com.yuxiang.community;
 
 import jakarta.persistence.*;
 import java.math.BigDecimal;

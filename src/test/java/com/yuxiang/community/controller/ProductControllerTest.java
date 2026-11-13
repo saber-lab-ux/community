@@ -1,4 +1,4 @@
-package com.yuxiang.commuity.controller;
+package com.yuxiang.community.controller;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.mockito.Mockito.verify;
 import org.springframework.http.MediaType;
@@ -12,8 +12,8 @@ import org.springframework.data.domain.PageRequest;
 import static org.mockito.ArgumentMatchers.any;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import com.yuxiang.commuity.Product;
-import com.yuxiang.commuity.repository.ProductRepository;
+import com.yuxiang.community.Product;
+import com.yuxiang.community.repository.ProductRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;

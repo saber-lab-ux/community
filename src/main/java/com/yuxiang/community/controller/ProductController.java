@@ -1,6 +1,6 @@
-package com.yuxiang.commuity.controller;
+package com.yuxiang.community.controller;
 import org.springframework.validation.annotation.Validated;
-import com.yuxiang.commuity.dto.PageResponse;
+import com.yuxiang.community.dto.PageResponse;
 import jakarta.validation.ConstraintViolationException;
 
 import jakarta.validation.constraints.Max;
@@ -11,8 +11,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
-import com.yuxiang.commuity.Product;
-import com.yuxiang.commuity.repository.ProductRepository;
+import com.yuxiang.community.Product;
+import com.yuxiang.community.repository.ProductRepository;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

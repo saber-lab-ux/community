@@ -1,4 +1,4 @@
-package com.yuxiang.commuity;
+package com.yuxiang.community;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

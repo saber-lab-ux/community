@@ -1,6 +1,6 @@
-package com.yuxiang.commuity.repository;
+package com.yuxiang.community.repository;
 
-import com.yuxiang.commuity.Product;
+import com.yuxiang.community.Product;
 import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,8 +1,8 @@
-package com.yuxiang.commuity.controller;
+package com.yuxiang.community.controller;
 
-import com.yuxiang.commuity.Product;
-import com.yuxiang.commuity.config.SecurityConfig;
-import com.yuxiang.commuity.repository.ProductRepository;
+import com.yuxiang.community.Product;
+import com.yuxiang.community.config.SecurityConfig;
+import com.yuxiang.community.repository.ProductRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
