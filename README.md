@@ -64,7 +64,7 @@ CREATE DATABASE IF NOT EXISTS community_db
 | `DB_PASSWORD` | 你本机的数据库密码 |
 | `SPRING_JPA_HIBERNATE_DDL_AUTO` | `update` |
 
-当前 `application.yaml` 中的 `jpa` 位于 `spring.data` 下，需要调整为 `spring.jpa`，与 `datasource`、`data` 同级。上面的环境变量可在本地启动时显式启用建表配置；`update` 仅用于开发数据库。
+项目已通过 `spring.jpa.hibernate.ddl-auto: update` 配置开发环境的自动建表和表结构更新。`update` 仅用于开发数据库。
 
 如果使用 macOS 默认 zsh 终端，可以隐藏输入数据库密码：
 
