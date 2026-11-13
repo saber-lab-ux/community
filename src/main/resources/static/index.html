@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>商品管理</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/app.js" defer></script>
+</head>
+<body>
+<main class="container">
+    <header>
+        <div>
+            <h1>商品管理</h1>
+            <p>查看商品价格、库存和销售状态</p>
+        </div>
+        <div class="header-actions">
+            <button id="openCreateBtn" type="button">新增商品</button>
+            <button id="refreshBtn" type="button">刷新列表</button>
+            <a class="logout-link" href="/logout">退出登录</a>
+        </div>
+    </header>
+
+    <dialog id="productDialog" aria-labelledby="formTitle">
+        <section class="create-section">
+            <div class="dialog-header">
+                <h2 id="formTitle">新增商品</h2>
+                <button id="closeDialogBtn" type="button"
+                        aria-label="关闭商品表单">关闭</button>
+            </div>
+
+        <form id="productForm">
+            <div class="form-grid">
+                <label>
+                    商品名称
+                    <input id="productName" type="text"
+                           placeholder="例如：红富士苹果" required>
+                </label>
+
+                <label>
+                    价格（元）
+                    <input id="productPrice" type="number"
+                           min="0.01" step="0.01"
+                           placeholder="例如：6.20" required>
+                </label>
+
+                <label>
+                    库存
+                    <input id="productStock" type="number"
+                           min="0" step="1"
+                           placeholder="例如：100" required>
+                </label>
+
+                <label>
+                    销售状态
+                    <select id="productStatus">
+                        <option value="ON_SALE">在售</option>
+                        <option value="OFF_SALE">已下架</option>
+                    </select>
+                </label>
+
+                <label class="full-width">
+                    商品描述
+                    <textarea id="productDescription" rows="3"
+                              placeholder="填写商品描述，可不填"></textarea>
+                </label>
+            </div>
+
+            <div class="form-actions">
+                <button id="saveBtn" type="submit">保存商品</button>
+                <button type="reset">清空表单</button>
+                <button id="cancelEditBtn" type="button" hidden>取消编辑</button>
+            </div>
+
+            <p id="formMessage" role="status" aria-live="polite"></p>
+        </form>
+    </section>
+    </dialog>
+
+
+    <form id="searchForm" class="search-bar">
+        <label for="searchName">搜索商品</label>
+
+        <input id="searchName"
+               type="search"
+               placeholder="输入商品名称，例如：苹果">
+
+        <button id="searchBtn" type="submit">搜索</button>
+        <button id="resetSearchBtn" type="button">重置</button>
+    </form>
+    <p id="message" role="status" aria-live="polite">正在加载商品……</p>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>商品名称</th>
+                <th>价格</th>
+                <th>库存</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody id="productList"></tbody>
+        </table>
+    </div>
+
+    <footer>
+        <span id="pageInfo">等待加载</span>
+        <div class="page-buttons">
+            <button id="prevBtn" type="button" disabled>上一页</button>
+            <button id="nextBtn" type="button" disabled>下一页</button>
+        </div>
+    </footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,50 @@
+### 查询所有商品
+GET http://localhost:8081/api/products
+
+### 查询单个商品
+GET http://localhost:8081/api/products/1
+
+### 新增商品
+POST http://localhost:8081/api/products
+Content-Type: application/json
+
+{
+  "name": "HTTP测试商品",
+  "description": "通过 IDEA HTTP Client 新增",
+  "price": 6.50,
+  "stock": 80,
+  "status": "ON_SALE"
+}
+
+### 修改商品
+PUT http://localhost:8081/api/products/1
+Content-Type: application/json
+
+{
+  "name": "修改后的商品",
+  "description": "通过 IDEA HTTP Client 修改",
+  "price": 7.20,
+  "stock": 60,
+  "status": "ON_SALE"
+}
+
+### 删除商品
+DELETE http://localhost:8081/api/products/1
+
+### 无效输入：名称为空、价格和库存为负数（预期 400）
+POST http://localhost:8081/api/products
+Content-Type: application/json
+
+{
+  "name": " ",
+  "description": "校验测试",
+  "price": -1,
+  "stock": -2,
+  "status": "ON_SALE"
+}
+
+### 查询不存在的商品（预期 404）
+GET http://localhost:8081/api/products/99999
+
+### 按名称搜索商品
+GET http://localhost:8081/api/products/search?name=测试
